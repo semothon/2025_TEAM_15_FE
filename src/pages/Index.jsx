@@ -62,9 +62,14 @@ const Index = () => {
 
       <motion.div
         className="features-header"
-        initial={{ opacity: 0, x: -50 }}
+        initial={{ opacity: 0, x: -20 }}
         animate={{ opacity: 1, x: 20 }}
-        transition={{ duration: 1.5, ease: 'easeOut' }}
+        transition={{
+          duration: 1.4,
+          ease: 'easeOut',
+          repeat: Infinity,
+          repeatType: 'reverse',
+        }}
       >
         <h2>Edu Path in CS</h2>
       </motion.div>
