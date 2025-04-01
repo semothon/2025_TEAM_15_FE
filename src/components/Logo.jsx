@@ -6,7 +6,7 @@ import '@fontsource/alkatra';
 
 const Logo = () => {
   return (
-    <Link to="/" className="app-name">
+    <Link to="/index" className="app-name">
       🎓EPiC
     </Link>
   );

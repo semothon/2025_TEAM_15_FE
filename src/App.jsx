@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 // import viteLogo from '/vite.svg';
 
 import './App.css';
+import Welcome from './pages/Welcome';
 import Index from './pages/Index';
 import Graduation from './pages/Graduation';
 import Curriculum from './pages/Curriculum';
@@ -16,7 +17,8 @@ const App = () => {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Index />} />
+        <Route path="/" element={<Welcome />} />
+        <Route path="/index" element={<Index />} />
         <Route path="/graduation-check" element={<Graduation />} />
         <Route path="/curriculum" element={<Curriculum />} />
         <Route path="/timetable" element={<Timetable />} />
