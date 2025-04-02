@@ -121,5 +121,5 @@
 }
 
 .submit-button:hover {
-  background-color: #3b509c;
+  background-color: var(--primary-hover-color);
 }
