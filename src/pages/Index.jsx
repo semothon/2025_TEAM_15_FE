@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { ArrowRight, CheckCircle, BookOpen, Clock } from 'lucide-react';
 
+import Header from '../components/Header';
 import '../styles/index.css';
 import '@fontsource/Itim';
 import '@fontsource/Tillana/700.css';
@@ -57,6 +58,7 @@ const Index = () => {
 
   return (
     <div className="page-container">
+      <Header />
 
       <motion.div
         className="features-header"

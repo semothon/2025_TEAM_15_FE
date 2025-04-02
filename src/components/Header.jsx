@@ -12,7 +12,7 @@ const Header = () => {
   return (
     <header className="header-container">
       <div className="header-content">
-        <Logo />
+        <Logo className="app-name" />
 
         {/* top navigation */}
         <nav className="nav-links">
