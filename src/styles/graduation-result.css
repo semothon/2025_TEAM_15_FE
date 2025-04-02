@@ -58,35 +58,37 @@
   font-size: 16px;
 }
 
-.form-group-horizontal .form-group {
-  display:block;
+.form-group-horizontal .form-group-box {
   margin-left: 10px;
   margin-right: 10px;
   width: 500px;
+  height: 20px; /* 고정 높이를 제거하여 내용에 따라 높이가 조정되도록 설정 */
+  border: 1px solid black;
+  border-radius: 15px;
+  text-align: left; /* 텍스트를 왼쪽 정렬 */
+  margin-top: 10px;
+  padding: 10px; /* 내부 여백 추가 */
 }
 
-.form-select {
-  width: calc(100% - 16px); /* 전체 너비를 차지하도록 설정 */
-  margin-top: 10px;
-  height: 40px; /* 드롭다운 박스의 세로 길이를 40px로 설정 */
-  line-height: 40px; /* 텍스트가 박스 중앙에 정렬되도록 설정 */
-  padding: 10px;
+.form-group-horizontal .form-group-box p {
+  margin: 0; /* 기본 여백 제거 */
+  line-height: 1.5; /* 텍스트의 줄 간격 조정 */
+  font-size: 16px; /* 글자 크기 조정 */
 }
 
 /* 성적표 업로드 영역 스타일 */
-.upload-section {
+.result-section {
   margin-top: 0px;
 }
 
-.upload-box {
-  border: dashed #ddd;
+.result-box {
+  border: solid #ddd;
   border-radius: 8px;
-  padding: 40px;
-  text-align: center;
-}
-
-.upload-box p {
-  font-size: 14px;
+  padding: 20px;
+  display: flex; /* Flexbox 활성화 */
+  flex-direction: column; /* 세로 방향 정렬 */
+  justify-content: flex-start; /* 세로 방향 위쪽 정렬 */
+  align-items: flex-start; /* 가로 방향 왼쪽 정렬 */
 }
 
 .form-file {

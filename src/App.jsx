@@ -10,6 +10,7 @@ import './App.css';
 import Welcome from './pages/Welcome';
 import Index from './pages/Index';
 import Graduation from './pages/Graduation';
+import GraduationResult from './pages/GraduationResult';
 import Curriculum from './pages/Curriculum';
 import Timetable from './pages/Timetable';
 
@@ -20,6 +21,7 @@ const App = () => {
         <Route path="/" element={<Welcome />} />
         <Route path="/index" element={<Index />} />
         <Route path="/graduation-check" element={<Graduation />} />
+        <Route path="/graduation-result" element={<GraduationResult />} />
         <Route path="/curriculum" element={<Curriculum />} />
         <Route path="/timetable" element={<Timetable />} />
       </Routes>
