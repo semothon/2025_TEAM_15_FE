@@ -19,6 +19,10 @@
   margin-top: 5%;
 }
 
+.graduation-intro{
+  padding-top: 100px;
+}
+
 /* 제목 스타일 */
 .graduation-title {
   font-size: 27px;
@@ -67,6 +71,13 @@
   white-space: nowrap;
 }
 
+.form-group-horizontal .form-group {
+  display:block;
+  margin-left: 10px;
+  margin-right: 10px;
+  width: 500px;
+}
+
 .form-select {
   padding: 8px;
   border-radius: 6px;
@@ -96,6 +107,10 @@
 
 .upload-box p {
   font-size: 16px;
+}
+
+.upload-box p:first-child {
+  margin-bottom: 10px;
 }
 
 .form-file {
