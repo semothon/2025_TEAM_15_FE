@@ -2,21 +2,29 @@
 
 @import './theme.css';
 
+.curriculum-intro {
+  width: 80vw;
+  margin: 0 auto;
+  text-align: left;
+  margin-top: 5%;
+  margin-bottom: 5px;
+}
+
 .curriculum-container {
   width: 80vw;
-  height: 70vh;
-  max-width: 2000px;
+  max-width: 1500px;
   min-width: 600px;
+  max-height: 400px;
   margin: 0 auto;
   background-color: #fff;
   border: 1px solid #ddd;
   display: flex;
   flex-direction: column;
-  padding: 30px;
+  padding: 20px 20px 30px 30px;
   align-items: left;
   border-radius: 16px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  margin-top: 5%;
+  margin-top: 2%;
 }
 
 .curriculum-title {
@@ -32,6 +40,7 @@
   font-size: 18px;
   color: #666;
   text-align: left;
+  margin-top: 3px;
   margin-bottom: 20px;
 }
 
@@ -42,7 +51,7 @@
 .section-title {
   font-size: 20px;
   text-align: left;
-  margin-top: 5px;
+  margin-top: 0px;
 }
 
 .interest-input-group {
@@ -107,7 +116,7 @@
 
 .extra-info {
   margin-top: 5px;
-  margin-bottom: 25px;
+  margin-bottom: 5px;
   margin-right: 25px;
 }
 
@@ -119,4 +128,5 @@
   border-radius: 6px;
   border: 1px solid #ccc;
   resize: none;
+  margin-bottom: 10px;
 }

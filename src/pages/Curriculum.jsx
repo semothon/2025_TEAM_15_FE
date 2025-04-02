@@ -7,14 +7,16 @@ import '../styles/curriculum.css';
 const Curriculum = () => {
   return (
     <div>
-      <div className="curriculum-container">
         <Header />
+        <div className="curriculum-intro">
         <h2 className="curriculum-title">커리큘럼 추천</h2>
-
         <p className="curriculum-description">
           관심 키워드를 입력하면 AI가 최적의 커리큘럼을 추천해 드립니다.
         </p>
+      </div>
 
+      <div className="curriculum-container">
+        
         {/* 관심 키워드 직접 입력 */}
         <div className="interest-section">
           <h2 className="section-title">관심사 입력</h2>
