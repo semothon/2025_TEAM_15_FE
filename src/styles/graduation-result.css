@@ -1,7 +1,10 @@
+/* src/styles/graduation-result.css */
+
 @import './theme.css';
 
 .graduation-intro{
   padding-top: 100px;
+  margin-top: -10px;
 }
 
 /* 제목 스타일 */
@@ -10,6 +13,7 @@
   font-weight: bold;
   color: #333;
   text-align: left; /* 중앙 정렬 */
+  margin-top: 1%;
 }
 
 .graduation-description {
@@ -25,11 +29,13 @@
   max-width: 1700px; /* 최대 2000px까지 확장 */
   min-width: 600px; /* 최소 800px */
   margin: 0 auto;
+  height: 60vh;
   background-color: #fff;
   border: 1px solid #ddd;
   display: flex; /* flex를 사용해 확장 보장 */
   flex-direction: column; /* 내부 요소 정렬 유지 */
-  padding:20px;
+  padding: 20px;
+  padding-bottom: 0px;
   margin-bottom: 10px;
   align-items: left; /* 중앙 정렬 */
   border-radius: 16px; /* 둥근 모서리 효과 */
@@ -39,6 +45,7 @@
 /* 정보 입력 섹션 스타일 */
 .info-section {
   margin-bottom: 30px;
+  margin-top: 5px;
 }
 
 .info-section-title{
@@ -68,6 +75,7 @@
   text-align: left; /* 텍스트를 왼쪽 정렬 */
   margin-top: 10px;
   padding: 10px; /* 내부 여백 추가 */
+  padding-left: 15px;
 }
 
 .form-group-horizontal .form-group-box p {
@@ -79,6 +87,8 @@
 /* 성적표 업로드 영역 스타일 */
 .result-section {
   margin-top: 0px;
+  margin-bottom: 15px;
+  width: 95%;
 }
 
 .result-box {
@@ -89,18 +99,17 @@
   flex-direction: column; /* 세로 방향 정렬 */
   justify-content: flex-start; /* 세로 방향 위쪽 정렬 */
   align-items: flex-start; /* 가로 방향 왼쪽 정렬 */
-}
-
-.form-file {
-  display: none; /* 기본 파일 업로드 버튼 숨김 */
+  margin-left: 15px;
+  width: calc(100% - 30px);
 }
 
 .submit-button {
   display: block;
-  width: calc(100% - 32px); /* 버튼 너비를 컨테이너에 맞춤 설정 */
+  width: calc(100% - 39px); /* 버튼 너비를 컨테이너에 맞춤 설정 */
   padding: 15px; /* 버튼 크기 확대 */
   background-color: var(--primary-color); /* 진한 파란색 버튼 */
   color: #fff;
   font-size: 18px; /* 텍스트 크기 확대 */
   border-radius: 8px; /* 둥근 모서리 효과 추가 */
+  margin-bottom: 10px;
 }
