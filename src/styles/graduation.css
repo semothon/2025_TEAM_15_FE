@@ -18,7 +18,7 @@
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.graduation-intro{
+.graduation-intro {
   margin-top: 0px;
   margin-left: 10px;
   margin-bottom: 18px;
@@ -50,40 +50,42 @@
   font-size: 20px;
   font-weight: bold;
   text-align: left;
-  margin-top: 8px;
+  margin-top: 5px;
   margin-bottom: 15px;
 }
 
 .form-group-horizontal {
   display: flex;
   align-items: center;
-  gap: 15px;
+  justify-content: flex-start;
+  gap: 0px;
+  width: 100%;
+  max-width: 95%;
 }
 
 .form-group-text {
-  display: block;
+  display: flex;
   font-size: 16px;
-  width: 50px;
-  text-align: right;
+  width: 90%;
+  min-width: 70px;
+  max-width: 90px;
+  margin-left: 7px;
+  text-align: center;
+  white-space: nowrap;
 }
 
 .form-group {
   display: flex;
   align-items: center;
   gap: 0px;
-  margin-left: 5px;
+  width: 100%;
+  margin-left: 0px;
+  max-width: 380px;
 }
 
 .form-label {
-  font-size: 17px;
+  font-size: 16px;
   white-space: nowrap;
-}
-
-.form-group-horizontal .form-group {
-  display:block;
-  margin-left: 10px;
-  margin-right: 10px;
-  width: 500px;
 }
 
 .form-select {
@@ -91,16 +93,15 @@
   border-radius: 6px;
   border: 1px solid #ccc;
   font-size: 16px;
-}
-#department {
-  width: 400px;
+  width: 100%;
 }
 
+#department,
 #studentId {
   width: 400px;
+  min-width: 200px;
 }
 
-/* 성적표 업로드 영역 스타일 */
 .upload-section {
   margin-top: 10px;
 }
