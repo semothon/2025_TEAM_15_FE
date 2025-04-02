@@ -4,23 +4,24 @@
 
 .graduation-container {
   width: 80vw;
-  height: 70vh;
-  max-width: 2000px;
+  max-width: 1700px;
   min-width: 600px;
   margin: 0 auto;
   background-color: #fff;
   border: 1px solid #ddd;
   display: flex;
   flex-direction: column;
+  margin-bottom: 20px;
   padding: 30px;
   align-items: left;
   border-radius: 16px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  margin-top: 5%;
 }
 
 .graduation-intro{
-  padding-top: 100px;
+  margin-top: 0px;
+  margin-left: 10px;
+  margin-bottom: 18px;
 }
 
 /* 제목 스타일 */
@@ -49,20 +50,27 @@
   font-size: 20px;
   font-weight: bold;
   text-align: left;
-  margin-top: 0px;
-  margin-bottom: 10px;
+  margin-top: 8px;
+  margin-bottom: 15px;
 }
 
 .form-group-horizontal {
   display: flex;
   align-items: center;
-  gap: 50px;
+  gap: 15px;
+}
+
+.form-group-text {
+  display: block;
+  font-size: 16px;
+  width: 50px;
+  text-align: right;
 }
 
 .form-group {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 0px;
   margin-left: 5px;
 }
 
@@ -85,11 +93,11 @@
   font-size: 16px;
 }
 #department {
-  width: 450px;
+  width: 400px;
 }
 
 #studentId {
-  width: 450px;
+  width: 400px;
 }
 
 /* 성적표 업로드 영역 스타일 */
@@ -102,7 +110,9 @@
   border-radius: 8px;
   padding: 10px;
   text-align: center;
-  margin-bottom: 10px;
+  width: 95%;
+  margin: 0 auto 10px;
+  max-width: 1200px;
 }
 
 .upload-box p {
@@ -127,12 +137,16 @@
 
 .submit-button {
   display: block;
-  width: calc(100%);
-  padding: 15px;
+  width: 100%;
+  padding: 10px;
   background-color: var(--primary-color);
   color: #fff;
   font-size: 18px;
   border-radius: 8px;
+  max-width: 1200px;
+  margin-left: 15px;
+  margin-right: 0px;
+  margin-bottom: 10px;
 }
 
 .submit-button:hover {
