@@ -83,10 +83,20 @@
   border-radius: 8px;
   padding: 40px;
   text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+
+.upload-box.active {
+  background-color: #f0f8ff; /* 드래그 중일 때 배경색 변경 */
 }
 
 .upload-box p {
   font-size: 14px;
+}
+
+.upload-box p:first-child {
+  margin-bottom: 10px;
 }
 
 .form-file {
