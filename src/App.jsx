@@ -12,6 +12,8 @@ import Index from './pages/Index';
 import Graduation from './pages/Graduation';
 import Curriculum from './pages/Curriculum';
 import Timetable from './pages/Timetable';
+import SignUp from './pages/SignUp';
+import LogIn from './pages/LogIn';
 
 const App = () => {
   return (
@@ -22,6 +24,8 @@ const App = () => {
         <Route path="/graduation-check" element={<Graduation />} />
         <Route path="/curriculum" element={<Curriculum />} />
         <Route path="/timetable" element={<Timetable />} />
+        <Route path="/signup" element={<SignUp />} />
+        <Route path="/login" element={<LogIn />} />
       </Routes>
     </Router>
   );

@@ -2,18 +2,13 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 import '../styles/welcome.css';
-// import Logo from '../components/Logo';
 
 const Welcome = () => {
   return (
     <div className="welcome-container">
-
-      {/* <div className="top-logo">
-        <Logo />
-      </div> */}
-
       <div className="central-content">
         <motion.div
           className="epic-animation"
@@ -48,8 +43,12 @@ const Welcome = () => {
       </div>
 
       <div className="welcome-buttons">
-        <button className="btn btn-signup">계정 만들기</button>
-        <button className="btn btn-signin">로그인</button>
+        <Link to="/signup" className="btn btn-signup">
+          계정 만들기
+        </Link>
+        <Link to="/login" className="btn btn-signin">
+          로그인
+        </Link>
       </div>
     </div>
   );
