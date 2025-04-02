@@ -5,7 +5,6 @@ import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { ArrowRight, CheckCircle, BookOpen, Clock } from 'lucide-react';
 
-import Header from '../components/Header';
 import '../styles/index.css';
 import '@fontsource/Itim';
 import '@fontsource/Tillana/700.css';
@@ -58,14 +57,13 @@ const Index = () => {
 
   return (
     <div className="page-container">
-      <Header />
 
       <motion.div
         className="features-header"
         initial={{ opacity: 0, x: -20 }}
         animate={{ opacity: 1, x: 20 }}
         transition={{
-          duration: 1.4,
+          duration: 1.0,
           ease: 'easeOut',
           repeat: Infinity,
           repeatType: 'reverse',
