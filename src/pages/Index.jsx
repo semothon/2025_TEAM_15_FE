@@ -7,8 +7,8 @@ import { ArrowRight, CheckCircle, BookOpen, Clock } from 'lucide-react';
 
 import Header from '../components/Header';
 import '../styles/index.css';
-import '@fontsource/Itim';
-import '@fontsource/Tillana/700.css';
+import '@fontsource/itim';
+import '@fontsource/tillana/700.css';
 import '@fontsource/ibm-plex-sans-kr';
 import '@fontsource/ibm-plex-sans-kr/700.css';
 
