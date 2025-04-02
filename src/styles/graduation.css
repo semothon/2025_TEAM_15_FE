@@ -1,34 +1,39 @@
+/* src/styles/graduation.css */
+
 @import './theme.css';
 
-
 .graduation-container {
-  width: 80vw; /* 화면 너비의 90% */
-  max-width: 2000px; /* 최대 2000px까지 확장 */
-  min-width: 600px; /* 최소 800px */
+  width: 80vw;
+  height: 70vh;
+  max-width: 2000px;
+  min-width: 600px;
   margin: 0 auto;
   background-color: #fff;
   border: 1px solid #ddd;
-  display: flex; /* flex를 사용해 확장 보장 */
-  flex-direction: column; /* 내부 요소 정렬 유지 */
-  padding:30px;
-  align-items: left; /* 중앙 정렬 */
-  border-radius: 16px; /* 둥근 모서리 효과 */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 약간의 그림자 추가 */
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  align-items: left;
+  border-radius: 16px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-top: 5%;
 }
 
 /* 제목 스타일 */
 .graduation-title {
-  font-size: 32px; /* 제목 크기 확대 */
+  font-size: 27px;
   font-weight: bold;
   color: #333;
-  text-align: left; /* 중앙 정렬 */
+  text-align: left;
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
 
 .graduation-description {
-  font-size: 18px; /* 설명 텍스트 크기 확대 */
+  font-size: 18px;
   color: #666;
-  text-align: left; /* 중앙 정렬 */
-  margin-bottom: 40px; /* 아래 여백 추가 */
+  text-align: left;
+  margin-bottom: 40px;
 }
 
 /* 정보 입력 섹션 스타일 */
@@ -36,58 +41,85 @@
   margin-bottom: 30px;
 }
 
-.info-section-title{
+.info-section-title {
   font-size: 20px;
   font-weight: bold;
   text-align: left;
+  margin-top: 0px;
+  margin-bottom: 10px;
 }
 
-/* 학과 선택과 학번 선택을 좌우로 배치 */
 .form-group-horizontal {
-  display: flex; /* 좌우 배치 */
-  justify-content: space-between; /* 양쪽 끝으로 배치 */
+  display: flex;
+  align-items: center;
+  gap: 50px;
 }
 
-.form-group-horizontal .form-group {
-  width: calc(50% - 10px); /* 각 선택 박스가 반씩 차지하도록 설정 */
+.form-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: 5px;
 }
 
 .form-label {
-  display: block;
-  font-size: 16px;
+  font-size: 17px;
+  white-space: nowrap;
 }
 
 .form-select {
-  width: calc(100% - 16px); /* 전체 너비를 차지하도록 설정 */
-  padding: 12px;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+#department {
+  width: 450px;
+}
+
+#studentId {
+  width: 450px;
 }
 
 /* 성적표 업로드 영역 스타일 */
 .upload-section {
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 .upload-box {
   border: dashed #ddd;
   border-radius: 8px;
-  padding: 40px;
+  padding: 10px;
   text-align: center;
+  margin-bottom: 10px;
 }
 
 .upload-box p {
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .form-file {
-  display: none; /* 기본 파일 업로드 버튼 숨김 */
+  display: none;
 }
-  
-  .submit-button {
-    display: block;
-    width: calc(100% - 32px); /* 버튼 너비를 컨테이너에 맞춤 설정 */
-    padding: 15px; /* 버튼 크기 확대 */
-    background-color: var(--primary-color); /* 진한 파란색 버튼 */
-    color: #fff;
-    font-size: 18px; /* 텍스트 크기 확대 */
-    border-radius: 8px; /* 둥근 모서리 효과 추가 */
-  }
+
+.upload-section-title {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: left;
+  margin-top: 0px;
+  margin-bottom: 7px;
+}
+
+.submit-button {
+  display: block;
+  width: calc(100%);
+  padding: 15px;
+  background-color: var(--primary-color);
+  color: #fff;
+  font-size: 18px;
+  border-radius: 8px;
+}
+
+.submit-button:hover {
+  background-color: #3b509c;
+}
