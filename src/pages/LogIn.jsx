@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Animation from '../components/Animation';
+// import Animation from '../components/Animation';
 import '../styles/login.css';
 import '@fontsource/alkatra';
 import CONFIG from '../config';
@@ -49,7 +49,12 @@ const LogIn = () => {
       <div className="login-container">
         <div></div>
         <div className="login-box">
-          <Animation text="🎓Edu Path in CS" />
+          {/* <Animation text="🎓Edu Path in CS" /> */}
+          
+          <div className="epic">
+            <h2>🎓 Edu Path in CS</h2>
+          </div>
+          
           <div className="login-header">
             <h2>로그인</h2>
           </div>

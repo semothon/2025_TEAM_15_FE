@@ -8,6 +8,14 @@
   margin-top: -110px;
 }
 
+.epic h2 {
+  font-size: 38px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: var(--primary-color);
+  font-family: 'Itim', cursive;
+}
+
 .login-box {
   display: flex;
   flex-direction: column;

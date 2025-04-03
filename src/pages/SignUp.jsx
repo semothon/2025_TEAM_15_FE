@@ -1,7 +1,7 @@
 // src/pages/SignUp.jsx
 
 import React, { useState } from 'react';
-import Animation from '../components/Animation';
+// import Animation from '../components/Animation';
 import '../styles/signup.css';
 import '@fontsource/alkatra';
 import CONFIG from '../config';
@@ -44,7 +44,7 @@ const SignUp = () => {
       }
     } catch (error) {
       console.error('에러 발생:', error);
-      setErrorMessage('인증 이메일 발송 중 오류 발생');
+      // setErrorMessage('인증 이메일 발송 중 오류 발생');
     }
   };
 
@@ -65,7 +65,7 @@ const SignUp = () => {
       }
     } catch (error) {
       console.error('에러 발생:', error);
-      setErrorMessage('인증 코드 확인 중 오류 발생');
+      // setErrorMessage('인증 코드 확인 중 오류 발생');
     }
   };
 
@@ -76,7 +76,12 @@ const SignUp = () => {
   return (
     <>
       <div className="signup-container">
-        <Animation text="🎓Edu Path in CS" />
+        {/* <Animation text="🎓Edu Path in CS" /> */}
+        
+        <div className="epic">
+          <h2>🎓 Edu Path in CS</h2>
+        </div>
+
         <div className="signup-header">
           <h2>계정 만들기</h2>
         </div>
