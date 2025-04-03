@@ -12,13 +12,13 @@ const Welcome = () => {
       <div className="central-content">
         <motion.div
           className="epic-animation"
-          initial={{ opacity: 0, x: -50 }}
+          initial={{ opacity: 0, x: -30 }}
           animate={{
             opacity: [0, 1, 0],
             x: [-20, 20, -20],
           }}
           transition={{
-            duration: 2.8,
+            duration: 1.8,
             ease: 'easeOut',
             repeat: Infinity,
             repeatType: 'loop',
