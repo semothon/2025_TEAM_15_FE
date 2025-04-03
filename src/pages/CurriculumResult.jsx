@@ -1,10 +1,41 @@
 // src/pages/CurriculumResult.jsx
 
-import React from 'react';
+import React, { useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import Header from '../components/Header';
+import { addQuestionWithAI } from '../api';
 import '../styles/curriculum-result.css';
 
 const CurriculumResult = () => {
+  const location = useLocation();
+  const { keyword, aiResponse, addInfo } = location.state || {};
+
+  const [question, setQuestion] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [showAlert, setShowAlert] = useState(false);
+
+  const handleSearch = async () => {
+    if (!question.trim()) {
+      alert('추가 질문을 입력해 주세요.');
+      return;
+    }
+
+    setLoading(true);
+    try {
+      const requestPayload = { keyword, addInfo, aiResponse, question };
+      console.log('Request Payload:', requestPayload);
+
+      const response = await addQuestionWithAI(requestPayload);
+
+      console.log('Response Status Code:', response.status);
+      console.log('AI Response:', response.data);
+    } catch (error) {
+      console.error('Error during API request:', error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <div>
       <Header />
@@ -16,33 +47,32 @@ const CurriculumResult = () => {
       </div>
 
       <div className="curriculum-container">
-        {/* 이전에 입력한 질문 내용 표시 */}
         <div className="prev-question-section">
           <h2 className="section-title">질문 내용</h2>
           <div className="prev-question-group">
             <input
               type="text"
               className="prev-question"
-              value="사용자의 이전 질문 표시"
+              value={`${keyword} 관련 커리큘럼 추천`}
               readOnly
             />
           </div>
         </div>
 
-        {/* AI의 답변 표시 */}
         <div className="ai-response-group">
           <div className="ai-response-box">
-            커리큘럼 추천에 대한 AI 답변입니다.
+            {aiResponse || '커리큘럼 추천에 대한 AI 답변이 없습니다.'}
           </div>
         </div>
 
-        {/* 질문 입력 필드와 검색 버튼 */}
         <div className="question-input-group">
           <textarea
             className="question-input"
             placeholder="질문을 입력하세요"
+            value={question}
+            onChange={(e) => setQuestion(e.target.value)}
           ></textarea>
-          <button className="search-button">
+          <button className="search-button" onClick={handleSearch}>
             검색 &nbsp;
             <svg
               xmlns="http://www.w3.org/2000/svg"
