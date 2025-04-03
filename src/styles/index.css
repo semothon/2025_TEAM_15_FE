@@ -96,7 +96,7 @@
 }
 
 .feature-button:hover {
-  background: #1d2a5b;
+  background: var(--primary-hover-color);
 }
 
 .feature-button svg {
