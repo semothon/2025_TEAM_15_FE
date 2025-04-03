@@ -3,6 +3,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import '@fontsource/alkatra';
+import '@fontsource/noto-sans';
+import '@fontsource/noto-sans-kr';
 
 const Logo = ({ className }) => {
   return (
