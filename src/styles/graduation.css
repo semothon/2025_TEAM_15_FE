@@ -50,7 +50,7 @@
   font-size: 20px;
   font-weight: bold;
   text-align: left;
-  margin-top: 5px;
+  margin-top: 0px;
   margin-bottom: 15px;
 }
 
@@ -103,7 +103,7 @@
 }
 
 .upload-section {
-  margin-top: 10px;
+  margin-top: -5px;
 }
 
 .upload-box {
@@ -114,6 +114,7 @@
   width: 95%;
   margin: 0 auto 10px;
   max-width: 1200px;
+  min-height: 140px;
 }
 
 .upload-box p {
@@ -145,6 +146,7 @@
   font-size: 18px;
   border-radius: 8px;
   max-width: 1200px;
+  max-height: 50px;
   margin-left: 15px;
   margin-right: 0px;
   margin-bottom: 10px;
