@@ -5,6 +5,12 @@ COPY package.json package-lock.json ./
 RUN npm install
 
 COPY . .
+
+RUN if [ "$HOST" = "docker" ]; then \
+    sed -i 's|http://localhost:8090|http://host.docker.internal:8090|g' src/config.js && \
+    sed -i 's|http://localhost:8000|http://host.docker.internal:8000|g' src/config.js; \
+    fi
+
 RUN npm run build
 
 FROM nginx:alpine
