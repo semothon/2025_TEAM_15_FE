@@ -29,6 +29,10 @@ const CurriculumResult = () => {
 
       console.log('Response Status Code:', response.status);
       console.log('AI Response:', response.data);
+
+      if (response.data && response.data.ai_add_response) {
+        setAiAnswer(response.data.ai_add_response);
+      }
     } catch (error) {
       console.error('Error during API request:', error);
     } finally {
