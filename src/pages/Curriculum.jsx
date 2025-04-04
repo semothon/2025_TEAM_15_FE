@@ -33,7 +33,7 @@ const Curriculum = () => {
     }
 
     console.log('keyword:', keyword);
-    console.log('additional Info:', addInfo);
+    console.log('additional info:', addInfo);
 
     setLoading(true);
 

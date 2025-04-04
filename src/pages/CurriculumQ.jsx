@@ -20,11 +20,15 @@ const CurriculumQ = () => {
   useEffect(() => {
     if (keyword) setInterest(keyword);
     if (add_info) setAdditionalInfo(add_info);
-    if (ai_response) setAiAnswer(ai_response);
+    if (ai_response) setAiResponse(ai_response);
   }, [keyword, add_info, ai_response]);
 
   const handleSubmit = async () => {
+
+    console.log('keyword:', keyword);
+    console.log('additional info:', additionalInfo);
     console.log('question:', question);
+    console.log('AI response:', aiResponse);
 
     try {
       const response = await addQuestionWithAI(question);

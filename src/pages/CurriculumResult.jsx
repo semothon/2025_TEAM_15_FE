@@ -13,6 +13,8 @@ const CurriculumResult = () => {
   const [question, setQuestion] = useState('');
   const [loading, setLoading] = useState(false);
   const [showAlert, setShowAlert] = useState(false);
+  const [aiAddResponse, setAiAddResponse] = useState('');
+  const [aiAnswer, setAiAnswer] = useState(aiResponse || '');
 
   const handleSearch = async () => {
     if (!question.trim()) {
@@ -26,18 +28,22 @@ const CurriculumResult = () => {
       console.log('Request Payload:', requestPayload);
 
       console.log('keyword:', keyword);
-      console.log('additional Info:', addInfo);
+      console.log('additional info:', addInfo);
+      console.log('question:', question);
+      console.log('AI response:', aiResponse);
 
       const response = await addQuestionWithAI(requestPayload);
 
-      console.log('Response Status Code:', response.status);
-      console.log('AI Response:', response.data);
+      console.log('response Status Code:', response.status);
+      console.log('AI response:', response.data);
 
-      if (response.data && response.data.ai_add_response) {
-        setAiAnswer(response.data.ai_add_response);
-      }
+      const aiAddResponse = response.data?.ai_add_response || '';
+      setAiAddResponse(aiAddResponse);
+
+      console.log('AI additional response:', aiAddResponse);
     } catch (error) {
       console.error('Error during API request:', error);
+      setAiAddResponse('');
     } finally {
       setLoading(false);
     }
