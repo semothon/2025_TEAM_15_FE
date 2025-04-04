@@ -1,10 +1,61 @@
 // src/pages/CurriculumQ.jsx
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import Header from '../components/Header';
+import CONFIG from '../config';
 import '../styles/curriculum-q.css';
 
 const CurriculumQ = () => {
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const { keyword, add_info, ai_response } = location.state || {};
+
+  const [interest, setInterest] = useState('');
+  const [additionalInfo, setAdditionalInfo] = useState('');
+  // const [aiAnswer, setAiAnswer] = useState('');
+  const [aiAnswer, setAiAnswer] = useState(ai_response || '');
+  const [question, setQuestion] = useState('');
+
+  useEffect(() => {
+    if (keyword) setInterest(keyword);
+    if (add_info) setAdditionalInfo(add_info);
+    if (ai_response) setAiAnswer(ai_response);
+  }, [keyword, add_info, ai_response]);
+
+  const handleSubmit = async () => {
+    console.log('question:', question);
+
+    try {
+      const response = await fetch(
+        `${CONFIG.SPRING_BOOT.BASE_URL}${CONFIG.SPRING_BOOT.ENDPOINTS.ADD_QUESTION}`,
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ question }),
+        },
+      );
+
+      if (!response.ok) throw new Error('질문 전송 실패');
+
+      const result = await response.json();
+
+      navigate('/curriculum-result', {
+        state: {
+          keyword: keyword,
+          interest: interest,
+          addInfo: addInfo,
+          aiResponse: result.ai_response,
+        },
+      });
+    } catch (error) {
+      console.error(error);
+      alert('질문 전송 중 오류가 발생했습니다.');
+    }
+  };
 
   return (
     <div>
@@ -22,32 +73,59 @@ const CurriculumQ = () => {
           <div className="prev-info-group">
             <div className="form-group-horizontal">
               <div className="form-group-text" id="interest-text">
-                <h4>관심 키워드</h4>
+                <h4>선택 관심사</h4>
               </div>
               <div className="form-group">
-                <input type="text" className="form-input" placeholder="키워드" id="interest-field" readOnly />
+                <input
+                  type="text"
+                  className="form-input"
+                  placeholder="관심사"
+                  id="interest-field"
+                  value={interest}
+                  readOnly
+                />
               </div>
 
-            <div className="form-group-text" id="q-info-text">
+              <div
+                className="form-group-text"
+                id="q-info-text"
+                style={{ marginLeft: '30px' }}
+              >
                 <h4>추가 정보</h4>
               </div>
               <div className="form-group">
-                <input type="text" className="form-input" placeholder="추가 정보" id="q-info-field" readOnly />
+                <input
+                  type="text"
+                  className="form-input"
+                  placeholder="추가 정보"
+                  id="q-info-field"
+                  value={additionalInfo}
+                  readOnly
+                />
               </div>
             </div>
-            </div>
           </div>
+        </div>
 
         <div className="ai-response-group">
-          <input type="text" className="ai-response-box" placeholder="AI에 의한 답변이 표시됩니다." id="ai-response" readOnly />
-
+          <input
+            type="text"
+            className="ai-response-box"
+            placeholder="AI에 의한 답변이 표시됩니다."
+            id="ai-response"
+            value={aiAnswer}
+            readOnly
+          />
         </div>
+
         <div className="question-input-group">
           <textarea
             className="question-input"
             placeholder="질문을 입력하세요"
+            value={question}
+            onChange={(e) => setQuestion(e.target.value)}
           ></textarea>
-          <button className="search-button">
+          <button className="search-button" onClick={handleSubmit}>
             검색 &nbsp;
             <svg
               xmlns="http://www.w3.org/2000/svg"
