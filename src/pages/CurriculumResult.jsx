@@ -25,6 +25,9 @@ const CurriculumResult = () => {
       const requestPayload = { keyword, addInfo, aiResponse, question };
       console.log('Request Payload:', requestPayload);
 
+      console.log('keyword:', keyword);
+      console.log('additional Info:', addInfo);
+
       const response = await addQuestionWithAI(requestPayload);
 
       console.log('Response Status Code:', response.status);

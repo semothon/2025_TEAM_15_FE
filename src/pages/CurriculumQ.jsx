@@ -3,7 +3,6 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import Header from '../components/Header';
-import CONFIG from '../config';
 import { addQuestionWithAI } from '../api';
 import '../styles/curriculum-q.css';
 
@@ -15,7 +14,7 @@ const CurriculumQ = () => {
 
   const [interest, setInterest] = useState('');
   const [additionalInfo, setAdditionalInfo] = useState('');
-  const [aiAnswer, setAiAnswer] = useState(ai_response || '');
+  const [aiResponse, setAiResponse] = useState(ai_response || '');
   const [question, setQuestion] = useState('');
 
   useEffect(() => {
@@ -35,12 +34,20 @@ const CurriculumQ = () => {
           keyword: keyword,
           interest: interest,
           addInfo: additionalInfo,
-          ai_response: response.ai_response,
+          aiResponse: response.ai_response,
         },
       });
     } catch (error) {
       console.error(error);
       alert('질문 전송 중 오류가 발생했습니다.');
+      navigate('/curriculum-result', {
+        state: {
+          keyword: keyword,
+          interest: interest,
+          addInfo: additionalInfo,
+          ai_response: '',
+        },
+      });
     }
   };
 
@@ -100,7 +107,7 @@ const CurriculumQ = () => {
             className="ai-response-box"
             placeholder="AI에 의한 답변이 표시됩니다."
             id="ai-response"
-            value={aiAnswer}
+            value={aiResponse}
             readOnly
           />
         </div>

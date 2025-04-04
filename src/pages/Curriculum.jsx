@@ -32,15 +32,15 @@ const Curriculum = () => {
       return;
     }
 
-    console.log('Keyword:', keyword);
-    console.log('Additional Info:', addInfo);
+    console.log('keyword:', keyword);
+    console.log('additional Info:', addInfo);
 
     setLoading(true);
 
     try {
       const response = await fetchRecommendedCurriculum(keyword, addInfo);
 
-      console.log('Response:', response);
+      console.log('response:', response);
 
       navigate('/curriculum-result', {
         state: { keyword, aiResponse: response.ai_response },
@@ -58,6 +58,15 @@ const Curriculum = () => {
         }
       } else {
         alert('네트워크 연결을 확인해 주세요.');
+      }
+
+      if (keyword.trim()) {
+        navigate('/curriculum-q', {
+          state: {
+            keyword,
+            add_info: addInfo,
+          },
+        });
       }
     }
 
