@@ -19,12 +19,18 @@ export const fetchRecommendedCurriculum = async (keyword, add_info) => {
 };
 
 export const addQuestionWithAI = async (question) => {
-  const response = await springApi.post(CONFIG.SPRING_BOOT.ENDPOINTS.ADD_QUESTION, { question });
+  console.log("🔴 [React → Spring] Sending:", { question }); // 디버깅용 출력
+  const response = await springApi.post(
+    CONFIG.SPRING_BOOT.ENDPOINTS.ADD_QUESTION, 
+    {question} // { question: "텍스트" } 형식으로 수정
+  );
   return response.data;
 };
 
 export const getGraduationResult = async (formdata) => {
-  const response = await springApi.post(CONFIG.SPRING_BOOT.ENDPOINTS.GRADUATION, formdata);
+  const response = await springApi.post(CONFIG.SPRING_BOOT.ENDPOINTS.GRADUATION, formdata, {headers: {
+    "Content-Type": "multipart/form-data",
+}},);
   return response.data; 
 };
 

@@ -40,6 +40,7 @@
   align-items: left; /* 중앙 정렬 */
   border-radius: 16px; /* 둥근 모서리 효과 */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 약간의 그림자 추가 */
+  overflow-y: auto;
 }
 
 /* 정보 입력 섹션 스타일 */
@@ -118,3 +119,6 @@
 .submit-button:hover {
   background-color: var(--primary-hover-color);
 }
+
+
+

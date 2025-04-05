@@ -20,7 +20,7 @@ const Graduation = () => {
   // react-dropzone 설정
   const { getRootProps, getInputProps, isDragActive } = useDropzone({
     onDrop,
-    accept: '.pdf', // PDF 파일만 허용
+    accept: { 'application/pdf': ['.pdf'] }, // MIME 타입과 확장자 설정
     maxSize: 10 * 1024 * 1024, // 최대 파일 크기: 10MB
   });
 
@@ -46,7 +46,7 @@ const Graduation = () => {
         </p>
       </div>
       <button type="button" onClick={handleAnalyzeClick} className="submit-button">
-          성적표 분석하기
+          진단표 분석하기
         </button>
       <div className="graduation-container">
         {/* 정보 입력 섹션 */}
@@ -94,7 +94,7 @@ const Graduation = () => {
 
         {/* 성적표 업로드 섹션 */}
         <div className="upload-section">
-          <h2 className="info-section-title">성적표 업로드 (PDF)</h2>
+          <h2 className="info-section-title">진단표 업로드(PDF)</h2>
           {/* 드래그 앤 드롭 영역 */}
           <div
             {...getRootProps()}

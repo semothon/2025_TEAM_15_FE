@@ -13,16 +13,6 @@ const Graduation = () => {
   const [graduationResult, setGraduationResult] = useState(null); // 졸업 요건 결과 저장
   const [isLoading, setIsLoading] = useState(true); // 로딩 상태 관리
 
-  //const temp_string = 'ㅁㅁㅁㅁㅁㅁㅁㅁㅁ';
-
-  const mockData = {
-    "필수 학점": "120학점",
-    "전공 학점": "60학점",
-    "교양 학점": "30학점",
-    "졸업 가능 여부": "가능",
-    "부족한 학점": "없음",
-  };
-
   useEffect(() => {
     const fetchGraduationResult = async () => {
       try {
@@ -35,9 +25,12 @@ const Graduation = () => {
         formData.append("department", department);
         formData.append("studentId", studentId);
 
-        // const response = await getGraduationResult(formData);
-        // setGraduationResult(response.data);
-        setGraduationResult(mockData);
+        const response = await getGraduationResult(formData);
+        console.log("요청보냄");
+        console.log("API 응답 데이터:", response);
+        setGraduationResult(response.responseData.analysis);
+        console.log("요건 결과 잘불러옴");
+        // setGraduationResult(mockData);
       } catch (error) {
         console.error("졸업 요건 결과 가져오기 실패:", error);
       } finally {
@@ -49,12 +42,26 @@ const Graduation = () => {
       fetchGraduationResult();
     }
   }, [file, department, studentId]);
-
-  const JsonToString = (resultData) => {
-    return Object.entries(resultData)
-      .map(([key, value]) => `${key}: ${value}`) // 키와 값을 문자열로 변환
-      .join(', '); // 콤마로 구분하여 한 줄로 출력
+  
+  const formatText = (text) => {
+    // 숫자(1., 2., ...) 기준으로 섹션 분리
+    const sections = text.split(/\d\.\s/);
+  
+    return sections.map((section, index) => (
+      <div key={index} style={{ marginBottom: "20px" }}>
+        {section.split("-").map((line, idx) => (
+          <p key={idx} style={{ margin: "5px 0" }}>
+            {line.trim()}
+          </p>
+        ))}
+      </div>
+    ));
   };
+  // const JsonToString = (resultData) => {
+  //   return Object.entries(resultData)
+  //     .map(([key, value]) => `${key}: ${value}`) // 키와 값을 문자열로 변환
+  //     .join(', '); // 콤마로 구분하여 한 줄로 출력
+  // };
   return (
     <div>
       <Header />
@@ -91,7 +98,7 @@ const Graduation = () => {
             <p>결과를 불러오는 중입니다...</p>
           ) : graduationResult ? (
             <div className="result-box">
-              <p>{JsonToString(graduationResult)}</p>
+              <p>{formatText(graduationResult.result)}</p>
             </div>
           ) : (
             <p>결과를 불러올 수 없습니다.</p>
@@ -99,6 +106,8 @@ const Graduation = () => {
         </div>
 
         {/* 분석 버튼 */}
+      </div>
+      <div>
         <Link to="/curriculum">
           <button type="button" className="submit-button">
             추천 커리큘럼 알아보기

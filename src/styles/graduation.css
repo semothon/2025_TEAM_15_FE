@@ -1,21 +1,5 @@
 @import './theme.css';
 
-.graduation-container {
-  width: 100%;
-  max-width: 1200px;
-  min-width: 600px;
-  margin: 0 auto;
-  background-color: #fff;
-  border: 1px solid #ddd;
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 20px;
-  padding: 30px;
-  align-items: flex-start;
-  border-radius: 16px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
 .graduation-intro {
   margin-top: 0px;
   margin-left: 10px;
@@ -37,6 +21,22 @@
   color: #666;
   text-align: left;
   margin-bottom: 40px;
+}
+
+.graduation-container {
+  width: 100%;
+  max-width: 1200px;
+  min-width: 600px;
+  margin: 0 auto;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  padding: 30px;
+  align-items: flex-start;
+  border-radius: 16px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 /* 정보 입력 섹션 스타일 */
