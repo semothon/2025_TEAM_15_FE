@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import { ArrowRight, CheckCircle, BookOpen, Clock } from 'lucide-react';
 
 import Header from '../components/Header';
+// import LogoImage from '../components/LogoImage';
 import '../styles/index.css';
 import '@fontsource/itim';
 import '@fontsource/tillana/700.css';
