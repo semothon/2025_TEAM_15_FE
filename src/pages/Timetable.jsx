@@ -23,6 +23,7 @@ const Timetable = () => {
   const onDrop = useCallback((id, acceptedFiles) => {
     const imageFiles = acceptedFiles.map((file) => ({
       src: URL.createObjectURL(file),
+      file: file, // 실제 파일 객체 저장
     }));
 
     setUploadBoxes((prevBoxes) =>
@@ -36,6 +37,7 @@ const Timetable = () => {
     const hasFiles = uploadBoxes.every((box) => box.files.length > 0);
 
     if (hasFiles) {
+      console.log("그냥 timetable -> timetable result 전달 : ",uploadBoxes);
       navigate('/timetable-result', { state: { uploadBoxes } });
     } else {
       alert('모든 박스에 시간표를 업로드해주세요!');
@@ -45,18 +47,16 @@ const Timetable = () => {
   return (
     <div>
       <Header />
-      <div className="time-container">
       <div className="timetable-intro">
         <h1 className="timetable-title">시간표 비교</h1>
         <p className="timetable-description">
           두 명 이상의 시간표를 업로드하여 공통으로 비어있는 시간을 확인하세요.
         </p>
       </div>
-      </div>
 
       <div className="upload-box-container">
         {uploadBoxes.map((box, index) => (
-          <div key={box.id} className="upload-box">
+          <div key={box.id} className="time-upload-box">
             <h3>시간표 {index + 1}</h3>
             {box.files.length === 0 ? (
               <DropzoneBox id={box.id} onDrop={onDrop} />
