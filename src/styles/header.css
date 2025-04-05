@@ -26,6 +26,7 @@
 .app-name {
   font-size: 35px;
   font-family: 'Alkatra', sans-serif;
+  /* font-family: 'Noto Sans', sans-serif; */
   font-weight: 700;
   color: var(--khu-color);
   margin-left: 0px;

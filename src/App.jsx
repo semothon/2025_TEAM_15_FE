@@ -12,6 +12,7 @@ import Index from './pages/Index';
 import Graduation from './pages/Graduation';
 import GraduationResult from './pages/GraduationResult';
 import Curriculum from './pages/Curriculum';
+import CurriculumQ from './pages/CurriculumQ';
 import CurriculumResult from './pages/CurriculumResult';
 import Timetable from './pages/Timetable';
 import TimetableResult from './pages/TimetableResult';
@@ -27,6 +28,7 @@ const App = () => {
         <Route path="/graduation-check" element={<Graduation />} />
         <Route path="/graduation-result" element={<GraduationResult />} />
         <Route path="/curriculum" element={<Curriculum />} />
+        <Route path="/curriculum-q" element={<CurriculumQ />} />
         <Route path="/curriculum-result" element={<CurriculumResult />} />
         <Route path="/timetable" element={<Timetable />} />
         <Route path="/timetable-result" element={<TimetableResult />} />

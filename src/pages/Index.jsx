@@ -60,19 +60,8 @@ const Index = () => {
     <div className="page-container">
       <Header />
 
-      <motion.div
-        className="features-header"
-        initial={{ opacity: 0, x: -20 }}
-        animate={{ opacity: 1, x: 20 }}
-        transition={{
-          duration: 1.0,
-          ease: 'easeOut',
-          repeat: Infinity,
-          repeatType: 'reverse',
-        }}
-      >
-        <h2>Edu Path in CS</h2>
-      </motion.div>
+      {/* animation header removed */}
+      <h2 className="features-header">Edu Path in CS</h2>
       <p>소프트웨어융합대학 학생들의 학업 계획에 필요한 기능을 제공합니다.</p>
 
       {/* features */}

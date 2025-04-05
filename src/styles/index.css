@@ -20,7 +20,8 @@
   text-align: center;
   margin-bottom: 0px;
   font-family: 'Itim', cursive;
-  font-size: 30px;
+  font-size: 45px;
+  color: var(--primary-color);
 }
 
 .features-header h2 {
@@ -73,6 +74,7 @@
 .feature-title {
   font-weight: 700;
   margin-bottom: 8px;
+  margin-top: 5px;
 }
 
 .feature-description {
@@ -94,7 +96,7 @@
 }
 
 .feature-button:hover {
-  background: #1d2a5b;
+  background: var(--primary-hover-color);
 }
 
 .feature-button svg {

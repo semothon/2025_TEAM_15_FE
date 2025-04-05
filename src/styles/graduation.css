@@ -1,10 +1,8 @@
-/* src/styles/graduation.css */
-
 @import './theme.css';
 
 .graduation-container {
-  width: 80vw;
-  max-width: 1700px;
+  width: 100%;
+  max-width: 1200px;
   min-width: 600px;
   margin: 0 auto;
   background-color: #fff;
@@ -13,7 +11,7 @@
   flex-direction: column;
   margin-bottom: 20px;
   padding: 30px;
-  align-items: left;
+  align-items: flex-start;
   border-radius: 16px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
@@ -50,7 +48,7 @@
   font-size: 20px;
   font-weight: bold;
   text-align: left;
-  margin-top: 5px;
+  margin-top: 0px;
   margin-bottom: 15px;
 }
 
@@ -103,21 +101,43 @@
 }
 
 .upload-section {
-  margin-top: 10px;
+  margin-top: -5px;
 }
 
+/* ✅ 업로드 박스 수정된 스타일 */
 .upload-box {
-  border: dashed #ddd;
-  border-radius: 8px;
-  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 100%;
+  height: 160px;
+  padding: 16px;
+  margin: 0 auto;
+  border: 2px dashed #ccc;
+  border-radius: 12px;
+  background-color: #f9f9f9;
+  box-sizing: border-box;
   text-align: center;
-  width: 95%;
-  margin: 0 auto 10px;
-  max-width: 1200px;
+  overflow: hidden;
+  word-wrap: break-word;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+}
+
+.upload-box:hover {
+  border-color: #888;
 }
 
 .upload-box p {
+  margin: 0;
   font-size: 16px;
+  color: #555;
+}
+
+.upload-box svg {
+  margin-bottom: 10px;
 }
 
 .upload-box p:first-child {
@@ -145,6 +165,7 @@
   font-size: 18px;
   border-radius: 8px;
   max-width: 1200px;
+  max-height: 50px;
   margin-left: 15px;
   margin-right: 0px;
   margin-bottom: 10px;
