@@ -12,6 +12,8 @@ import '@fontsource/itim';
 import '@fontsource/tillana/700.css';
 import '@fontsource/ibm-plex-sans-kr';
 import '@fontsource/ibm-plex-sans-kr/700.css';
+import '@fontsource/baloo-2';
+import '@fontsource/baloo-2/700.css';
 
 const Index = () => {
   const navigate = useNavigate();
@@ -62,7 +64,7 @@ const Index = () => {
       <Header />
 
       {/* animation header removed */}
-      <h2 className="features-header">Edu Path in CS</h2>
+      <h2 className="features-header">🎓 Edu Path in CS</h2>
       <p>소프트웨어융합대학 학생들의 학업 계획에 필요한 기능을 제공합니다.</p>
 
       {/* features */}

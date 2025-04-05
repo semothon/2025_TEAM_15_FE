@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@fontsource/alkatra": "^5.2.5",
+    "@fontsource/baloo-2": "^5.2.5",
     "@fontsource/dancing-script": "^5.2.5",
     "@fontsource/gloria-hallelujah": "^5.2.5",
     "@fontsource/ibm-plex-sans-kr": "^5.2.5",
