@@ -5,6 +5,7 @@ import { useLocation } from 'react-router-dom'; // 데이터 전달받기 위한
 import { getTimetable } from '../api';
 import Header from '../components/Header';
 import '../styles/timetable-result.css';
+import CONFIG from '../config';
 
 const TimetableResult = () => {
   const location = useLocation(); // 이전 페이지에서 전달된 state 접근
@@ -17,8 +18,13 @@ const TimetableResult = () => {
     const fetchTimetableResult = async () => {
       try {
         setIsLoading(true); // 로딩 시작
-        const images = uploadBoxes.flatMap((box) => box.files.map((file) => file.src)); // 업로드된 이미지 URL 배열로 변환
+        const images = uploadBoxes.flatMap((box) =>
+          box.files.map((fileObj) => fileObj.file)
+        );
+        console.log("이미지 배열 변환 성공, API 호출 시도");
         const response = await getTimetable(images); // API 호출
+        console.log("결과 잘 받아옴");
+        console.log(response);
         setResultImage(response); // API에서 받은 결과 이미지 URL 저장
       } catch (error) {
         console.error('시간표 결과 가져오기 실패:', error);
@@ -35,20 +41,25 @@ const TimetableResult = () => {
 
   //const temp_Image = 'https://placecats.com/g/300/200'; // 임시 이미지 URL
 
-  const handleDownloadResultImage = async () => {
-    try {
-      const response = await fetch(resultImage, { mode: 'cors' });
-      const blob = await response.blob();
-      const link = document.createElement('a');
-      link.href = URL.createObjectURL(blob);
-      link.download = 'result_image.png';
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-    } catch (error) {
-      console.error('이미지 다운로드 실패:', error);
-    }
-  };
+  // const handleDownloadResultImage = async () => {
+  //   try {
+  //     const imageUrl = `${CONFIG.FAST_API.BASE_URL}/${resultImage}`;
+  //     const response = await fetch(imageUrl, { mode: 'cors' });
+  //     const blob = await response.blob();
+  //     const link = document.createElement('a');
+  //     link.href = URL.createObjectURL(blob);
+  
+  //     // 파일 이름을 원본 이름 그대로 주자
+  //     const filename = resultImage.split('/').pop(); // "highlighted_timetable1.jpeg"
+  //     link.download = filename || 'result_image.jpeg';
+  
+  //     document.body.appendChild(link);
+  //     link.click();
+  //     document.body.removeChild(link);
+  //   } catch (error) {
+  //     console.error('이미지 다운로드 실패:', error);
+  //   }
+  // };
 
   return (
     <div>
@@ -87,10 +98,10 @@ const TimetableResult = () => {
             <p>결과를 불러오는 중입니다...</p>
           ) : resultImage ? (
             <>
-              <img src={resultImage} alt="Result Timetable" className="temp-image" />
-              <button onClick={handleDownloadResultImage} className="download-button">
+              <img src={`${CONFIG.FAST_API.BASE_URL}/${resultImage}`} alt="Result Timetable" className="temp-image" />
+              {/* <button onClick={handleDownloadResultImage} className="download-button">
                 이미지 다운로드
-              </button>
+              </button> */}
             </>
           ) : (
             <p>결과를 불러올 수 없습니다.</p>
